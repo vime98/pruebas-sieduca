@@ -15,6 +15,10 @@ class CreatePaisTable extends Migration
     {
         Schema::table('pais', function (Blueprint $table) {
             //
+            $table->uuid('id')->primary();
+            $table->string('nombre');
+            $table->string('estado');
+            $table->timestamps();
         });
     }
 

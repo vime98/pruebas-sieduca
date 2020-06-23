@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'role_id' => $id_role,
             'user_id' => $id_user
         ]);
-        
+
+
     }
 }

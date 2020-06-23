@@ -15,6 +15,12 @@ class CreateEstadoTable extends Migration
     {
         Schema::table('estado', function (Blueprint $table) {
             //
+            $table->uuid('id')->primary();
+            $table->string('nombre');
+            $table->uuid('id_pais');
+            $table->string('estado');
+            $table->timestamps();
+            $table->foreign('id_pais')->references('id')->on('pais');
         });
     }
 
