@@ -14,7 +14,14 @@ class CreateReticulaTable extends Migration
     public function up()
     {
         Schema::create('reticula', function (Blueprint $table) {
-            //
+            $table->uuid('id')->primary();
+            $table->foreign('id_nivel_academico')->references('id')->on('nivel_academico');
+            $table->string('nombre');
+            $table->string('rvoe')->nullable();
+            $table->string('centro_trabajo');
+            $table->text('descripcion');
+            $table->boolean('estado');
+            $table->timestamps();
         });
     }
 

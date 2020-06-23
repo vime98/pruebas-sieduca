@@ -14,7 +14,10 @@ class CreateEdificioTable extends Migration
     public function up()
     {
         Schema::create('edificio', function (Blueprint $table) {
-            //
+            $table->uuid('id')->primary();
+            $table->foreign('id_instituto')->references('id')->on('instituto');
+            $table->string('nombre');
+            $table->boolean('estado');
         });
     }
 
