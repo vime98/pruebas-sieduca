@@ -14,7 +14,11 @@ class CreateTemarioTable extends Migration
     public function up()
     {
         Schema::create('temario', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->string('nombre', 54);
+            $table->text('descripcion');
+            $table->uuid('id_materia');
+            $table->foreign('id_materia')->references('id')->on('materia');
             $table->timestamps();
         });
     }

@@ -14,7 +14,10 @@ class CreateSubtemaTable extends Migration
     public function up()
     {
         Schema::create('subtema', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->string('nombre', 54);
+            $table->uuid('id_tema');
+            $table->foreign('id_tema')->references('id')->on('temario');
             $table->timestamps();
         });
     }

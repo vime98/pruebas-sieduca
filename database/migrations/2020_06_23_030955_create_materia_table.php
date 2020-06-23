@@ -18,7 +18,7 @@ class CreateMateriaTable extends Migration
             $table->string('nombre', 54);
             $table->tinyInteger('grado');
             $table->string('creditos', 3);
-            $table->uuid('id_actividad');
+            $table->uuid('id_actividad')->nullable();
             $table->foreign('id_actividad')->references('id')->on('actividad');
             $table->text('descripcion');
             $table->uuid('id_prerequisito')->nullable();
