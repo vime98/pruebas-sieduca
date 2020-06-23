@@ -13,7 +13,7 @@ class CreateEdificioTable extends Migration
      */
     public function up()
     {
-        Schema::table('edificio', function (Blueprint $table) {
+        Schema::create('edificio', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateEdificioTable extends Migration
      */
     public function down()
     {
-        Schema::table('edificio', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('edificio');
     }
 }

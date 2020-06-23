@@ -13,7 +13,7 @@ class CreateAulaTable extends Migration
      */
     public function up()
     {
-        Schema::table('aula', function (Blueprint $table) {
+        Schema::create('aula', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateAulaTable extends Migration
      */
     public function down()
     {
-        Schema::table('aula', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('aula');
     }
 }

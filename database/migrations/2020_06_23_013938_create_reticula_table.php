@@ -13,7 +13,7 @@ class CreateReticulaTable extends Migration
      */
     public function up()
     {
-        Schema::table('reticula', function (Blueprint $table) {
+        Schema::create('reticula', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateReticulaTable extends Migration
      */
     public function down()
     {
-        Schema::table('reticula', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('reticula');
     }
 }

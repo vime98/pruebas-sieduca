@@ -13,8 +13,9 @@ class CreateTemarioTable extends Migration
      */
     public function up()
     {
-        Schema::table('temario', function (Blueprint $table) {
-            //
+        Schema::create('temario', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class CreateTemarioTable extends Migration
      */
     public function down()
     {
-        Schema::table('temario', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('temario');
     }
 }

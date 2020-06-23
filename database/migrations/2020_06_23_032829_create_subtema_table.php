@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMateriaTable extends Migration
+class CreateSubtemaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateMateriaTable extends Migration
      */
     public function up()
     {
-        Schema::table('materia', function (Blueprint $table) {
-            //
+        Schema::create('subtema', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class CreateMateriaTable extends Migration
      */
     public function down()
     {
-        Schema::table('materia', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('subtema');
     }
 }

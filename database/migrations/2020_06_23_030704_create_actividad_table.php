@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubtemaTable extends Migration
+class CreateActividadTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateSubtemaTable extends Migration
      */
     public function up()
     {
-        Schema::table('subtema', function (Blueprint $table) {
-            //
+        Schema::create('actividad', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('nombre');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class CreateSubtemaTable extends Migration
      */
     public function down()
     {
-        Schema::table('subtema', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('actividad');
     }
 }

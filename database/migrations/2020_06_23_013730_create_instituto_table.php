@@ -13,7 +13,7 @@ class CreateInstitutoTable extends Migration
      */
     public function up()
     {
-        Schema::table('instituto', function (Blueprint $table) {
+        Schema::create('instituto', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateInstitutoTable extends Migration
      */
     public function down()
     {
-        Schema::table('instituto', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('instituto');
     }
 }

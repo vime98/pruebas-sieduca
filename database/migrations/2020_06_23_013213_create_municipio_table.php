@@ -13,7 +13,7 @@ class CreateMunicipioTable extends Migration
      */
     public function up()
     {
-        Schema::table('municipio', function (Blueprint $table) {
+        Schema::create('municipio', function (Blueprint $table) {
             //
             $table->uuid('id')->primary();
             $table->string('nombre');
@@ -31,8 +31,6 @@ class CreateMunicipioTable extends Migration
      */
     public function down()
     {
-        Schema::table('municipio', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('municipio');
     }
 }

@@ -13,7 +13,7 @@ class CreateHorarioTable extends Migration
      */
     public function up()
     {
-        Schema::table('horario', function (Blueprint $table) {
+        Schema::create('horario', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateHorarioTable extends Migration
      */
     public function down()
     {
-        Schema::table('horario', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('horario');
     }
 }

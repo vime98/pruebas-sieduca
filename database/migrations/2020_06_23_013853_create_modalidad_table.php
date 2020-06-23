@@ -13,7 +13,7 @@ class CreateModalidadTable extends Migration
      */
     public function up()
     {
-        Schema::table('modalidad', function (Blueprint $table) {
+        Schema::create('modalidad', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateModalidadTable extends Migration
      */
     public function down()
     {
-        Schema::table('modalidad', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('modalidad');
     }
 }

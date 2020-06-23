@@ -13,7 +13,7 @@ class CreatePaisTable extends Migration
      */
     public function up()
     {
-        Schema::table('pais', function (Blueprint $table) {
+        Schema::create('pais', function (Blueprint $table) {
             //
             $table->uuid('id')->primary();
             $table->string('nombre');
@@ -29,8 +29,6 @@ class CreatePaisTable extends Migration
      */
     public function down()
     {
-        Schema::table('pais', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('pais');
     }
 }

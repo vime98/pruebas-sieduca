@@ -13,7 +13,7 @@ class CreateNivelTable extends Migration
      */
     public function up()
     {
-        Schema::table('nivel', function (Blueprint $table) {
+        Schema::create('nivel', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateNivelTable extends Migration
      */
     public function down()
     {
-        Schema::table('nivel', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('nivel');
     }
 }

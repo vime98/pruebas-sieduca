@@ -13,7 +13,7 @@ class CreateNivelAcademicoTable extends Migration
      */
     public function up()
     {
-        Schema::table('nivel_academico', function (Blueprint $table) {
+        Schema::create('nivel_academico', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateNivelAcademicoTable extends Migration
      */
     public function down()
     {
-        Schema::table('nivel_academico', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('nivel_academico');
     }
 }
