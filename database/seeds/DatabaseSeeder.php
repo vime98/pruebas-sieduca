@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
@@ -36,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'role_id' => $id_role,
             'user_id' => $id_user
         ]);
-        
+
         /*Seeder Academicos*/
         $this->call(AcademicosSeeder::class);
     }
