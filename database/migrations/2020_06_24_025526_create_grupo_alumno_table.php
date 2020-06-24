@@ -14,7 +14,11 @@ class CreateGrupoAlumnoTable extends Migration
     public function up()
     {
         Schema::create('grupo_alumno', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_grupo');
+            $table->foreign('id_grupo')->references('id')->on('grupo');
+            $table->uuid('id_alumno');
+            $table->foreign('id_alumno')->references('id')->on('alumno');
             $table->timestamps();
         });
     }

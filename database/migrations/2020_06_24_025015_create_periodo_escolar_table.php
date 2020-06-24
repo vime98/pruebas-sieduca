@@ -14,7 +14,8 @@ class CreatePeriodoEscolarTable extends Migration
     public function up()
     {
         Schema::create('periodo_escolar', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->string('nombre');
             $table->timestamps();
         });
     }

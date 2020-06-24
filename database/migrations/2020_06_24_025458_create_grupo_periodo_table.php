@@ -14,7 +14,12 @@ class CreateGrupoPeriodoTable extends Migration
     public function up()
     {
         Schema::create('grupo_periodo', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_grupo');
+            $table->foreign('id_grupo')->references('id')->on('grupo');
+            $table->uuid('id_periodo');
+            $table->foreign('id_periodo')->references('id')->on('periodo');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
