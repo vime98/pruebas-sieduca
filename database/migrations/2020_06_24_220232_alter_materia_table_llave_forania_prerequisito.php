@@ -14,7 +14,7 @@ class AlterMateriaTableLlaveForaniaPrerequisito extends Migration
     public function up()
     {
         Schema::table('materia', function (Blueprint $table) {
-            $table->foreign('id_materia_prerequisito')->references('id')->on('materia');
+            $table->foreign('id_prerequisito')->references('id')->on('materia');
         });
     }
 
