@@ -15,6 +15,7 @@ class CreateReticulaTable extends Migration
     {
         Schema::create('reticula', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('id_nivel_academico');
             $table->foreign('id_nivel_academico')->references('id')->on('nivel_academico');
             $table->string('nombre');
             $table->string('rvoe')->nullable();
