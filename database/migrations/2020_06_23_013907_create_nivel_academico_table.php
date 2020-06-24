@@ -15,9 +15,13 @@ class CreateNivelAcademicoTable extends Migration
     {
         Schema::create('nivel_academico', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('id_instituto');
+            $table->uuid('id_nivel');
             $table->foreign('id_instituto')->references('id')->on('instituto');
             $table->foreign('id_nivel')->references('id')->on('nivel');
             $table->string('cedula');
+            $table->uuid('id_horario');
+            $table->uuid('id_modalidad');
             $table->foreign('id_horario')->references('id')->on('horario');
             $table->foreign('id_modalidad')->references('id')->on('modalidad');
             $table->boolean('estado');
