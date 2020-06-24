@@ -14,7 +14,8 @@ class CreateModalidadTable extends Migration
     public function up()
     {
         Schema::create('modalidad', function (Blueprint $table) {
-            //
+            $table->uuid('id')->primary();
+            $table->string('nombre', 54);
         });
     }
 
