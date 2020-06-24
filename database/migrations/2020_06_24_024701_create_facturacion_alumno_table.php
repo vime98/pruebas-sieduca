@@ -14,7 +14,19 @@ class CreateFacturacionAlumnoTable extends Migration
     public function up()
     {
         Schema::create('facturacion_alumno', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_alumno');
+            $table->string('nombre');
+            $table->string('calle');
+            $table->integer('num_interno');
+            $table->integer('num_externo');
+            $table->string('colonia');
+            $table->string('cp', 10);
+            $table->string('estado');
+            $table->string('ciudad');
+            $table->string('municipio');
+            $table->string('rfc');
+            $table->foreign('id_alumno')->references('id')->on('alumno');
             $table->timestamps();
         });
     }
