@@ -15,21 +15,21 @@ class AcademicosSeeder extends Seeder
     public function run()
     {
         DB::table('actividad')->insert([
-            ['id' => Uuid::uuid1(), 'nombre' => 'PRACTICAS', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'TEORICAS', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'TEORICAS - PRACTICAS', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')]
+            ['id' => Uuid::uuid1(), 'nombre' => 'PRACTICAS'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'TEORICAS'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'TEORICAS - PRACTICAS']
         ]);
 
         DB::table('movimiento_alumno')->insert([
-            ['id' => Uuid::uuid1(), 'nombre' => 'ERROR DE REGISTRO', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'ACTIVO', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'INSCRIPCION', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'MATRICULADO', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'VERANO', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'BAJA TEMPORAL', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'BAJA DEFINITIVA', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'GRADUADO', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')],
-            ['id' => Uuid::uuid1(), 'nombre' => 'TITULADO', 'created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP')]
+            ['id' => Uuid::uuid1(), 'nombre' => 'ERROR DE REGISTRO'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'ACTIVO'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'INSCRIPCION'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'MATRICULADO'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'VERANO'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'BAJA TEMPORAL'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'BAJA DEFINITIVA'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'GRADUADO'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'TITULADO']
         ]);
     }
 }
