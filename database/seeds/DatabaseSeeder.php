@@ -40,5 +40,7 @@ class DatabaseSeeder extends Seeder
 
         /*Seeder Academicos*/
         $this->call(AcademicosSeeder::class);
+        $this->call(Periodo_escolarSeeder::class);
+        $this->call(PlantelSeed::class);
     }
 }
