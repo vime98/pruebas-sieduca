@@ -18,7 +18,7 @@ class CreateEstadoTable extends Migration
             $table->uuid('id')->primary();
             $table->string('nombre');
             $table->uuid('id_pais');
-            $table->string('estado');
+            $table->boolean('estado');
             $table->timestamps();
             $table->foreign('id_pais')->references('id')->on('pais');
         });

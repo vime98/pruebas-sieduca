@@ -18,7 +18,7 @@ class CreateMunicipioTable extends Migration
             $table->uuid('id')->primary();
             $table->string('nombre');
             $table->uuid('id_estado');
-            $table->string('estado');
+            $table->boolean('estado');
             $table->timestamps();
             $table->foreign('id_estado')->references('id')->on('estado');
         });

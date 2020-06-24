@@ -21,8 +21,8 @@ class CreateMateriaTable extends Migration
             $table->uuid('id_actividad')->nullable();
             $table->foreign('id_actividad')->references('id')->on('actividad');
             $table->text('descripcion');
+            //aqui se debe de poner el prerequisito
             $table->uuid('id_prerequisito')->nullable();
-            $table->foreign('id_prerequisito')->references('id')->on('materia');
             $table->boolean('estado');
             $table->timestamps();
         });

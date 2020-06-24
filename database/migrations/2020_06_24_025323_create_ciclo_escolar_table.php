@@ -14,7 +14,8 @@ class CreateCicloEscolarTable extends Migration
     public function up()
     {
         Schema::create('ciclo_escolar', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->string('nombre');
             $table->timestamps();
         });
     }

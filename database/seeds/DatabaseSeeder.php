@@ -40,5 +40,6 @@ class DatabaseSeeder extends Seeder
 
         /*Seeder Academicos*/
         $this->call(AcademicosSeeder::class);
+        $this->call(PlantelSeed::class);
     }
 }

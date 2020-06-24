@@ -14,7 +14,11 @@ class CreateReticulaMateriaTable extends Migration
     public function up()
     {
         Schema::create('reticula_materia', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_reticula');
+            $table->uuid('id_materia');
+            $table->foreign('id_reticula')->references('id')->on('reticula');
+            $table->foreign('id_materia')->references('id')->on('materia');
             $table->timestamps();
         });
     }

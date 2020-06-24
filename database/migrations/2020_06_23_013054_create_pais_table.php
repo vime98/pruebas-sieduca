@@ -17,7 +17,7 @@ class CreatePaisTable extends Migration
             //
             $table->uuid('id')->primary();
             $table->string('nombre');
-            $table->string('estado');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
