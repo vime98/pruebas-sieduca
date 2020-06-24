@@ -14,7 +14,17 @@ class CreateGrupoTable extends Migration
     public function up()
     {
         Schema::create('grupo', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_reticula');
+            $table->string('nombre');
+            $table->string('clave');
+            $table->uuid('id_periodo_escolar');
+            $table->integer('num_parciales');
+            $table->integer('num_extras');
+            $table->integer('grado');
+            $table->boolean('estado');
+            $table->foreign('id_reticula')->references('id')->on('reticula');
+            $table->foreign('id_periodo_escolar')->references('id')->on('periodo_escolar');
             $table->timestamps();
         });
     }
