@@ -20,6 +20,12 @@ class AcademicosSeeder extends Seeder
             ['id' => Uuid::uuid1(), 'nombre' => 'TEORICAS - PRACTICAS']
         ]);
 
+        DB::table('periodo_escolar')->insert([
+            ['id' => Uuid::uuid1(), 'nombre' => 'SEMESTRAL'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'CUATRIMESTRAL'],
+            ['id' => Uuid::uuid1(), 'nombre' => 'MODULAR']
+        ]);
+
         DB::table('movimiento_alumno')->insert([
             ['id' => Uuid::uuid1(), 'nombre' => 'ERROR DE REGISTRO'],
             ['id' => Uuid::uuid1(), 'nombre' => 'ACTIVO'],
