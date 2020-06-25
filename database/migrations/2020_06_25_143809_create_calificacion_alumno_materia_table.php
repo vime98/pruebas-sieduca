@@ -14,7 +14,17 @@ class CreateCalificacionAlumnoMateriaTable extends Migration
     public function up()
     {
         Schema::create('calificacion_alumno_materia', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_carga_materia_docente');
+            $table->foreign('id_carga_materia_docente')->references('id')->on('carga_materia_docente');
+            $table->uuid('id_alumno');
+            $table->foreign('id_alumno')->references('id')->on('alumno');
+            $table->double('parcial_01', 8, 2);
+            $table->double('parcial_02', 8, 2);
+            $table->double('parcial_03', 8, 2);
+            $table->double('parcial_04', 8, 2);
+            $table->double('parcial_05', 8, 2);
+            $table->double('parcial_06', 8, 2);
             $table->timestamps();
         });
     }

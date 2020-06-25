@@ -14,7 +14,12 @@ class CreateAlumnoMateriaTable extends Migration
     public function up()
     {
         Schema::create('alumno_materia', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('id_materia');
+            $table->foreign('id_materia')->references('id')->on('materia');
+            $table->uuid('id_alumno');
+            $table->foreign('id_alumno')->references('id')->on('alumno');
+            $table->double('calificacion_final', 8, 2);
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ class CreateTipoBecaTable extends Migration
     public function up()
     {
         Schema::create('tipo_beca', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->uuid('id')->primary();
+            $table->string('nombre');
         });
     }
 
