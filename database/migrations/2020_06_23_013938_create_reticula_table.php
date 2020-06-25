@@ -21,6 +21,8 @@ class CreateReticulaTable extends Migration
             $table->string('rvoe')->nullable();
             $table->string('centro_trabajo');
             $table->text('descripcion');
+            $table->double('costo_inscripcion', 8, 2);
+            $table->double('costo_mensualidad', 8, 2);
             $table->boolean('estado');
             $table->timestamps();
         });

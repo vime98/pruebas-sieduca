@@ -14,8 +14,13 @@ class CreateArchivosAlumnoTable extends Migration
     public function up()
     {
         Schema::create('archivos_alumno', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->uuid('id')->primary();
+            $table->uuid('id_alumno');
+            $table->foreign('id_alumno')->references('id')->on('alumno');
+            $table->uuid('id_archivos');
+            $table->foreign('id_archivos')->references('id')->on('archivos');
+            $table->string('archivo');
+            $table->boolean('estado');
         });
     }
 

@@ -19,6 +19,7 @@ class CreateBecaAlumnoTable extends Migration
             $table->foreign('id_alumno')->references('id')->on('alumno');
             $table->uuid('id_tipo_beca');
             $table->foreign('id_tipo_beca')->references('id')->on('tipo_beca');
+            $table->integer('porcentaje');
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ class CreateArchivosTable extends Migration
     public function up()
     {
         Schema::create('archivos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->uuid('id')->primary();
+            $table->string('nombre');
         });
     }
 
