@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMovimientoAlumnoTable extends Migration
+class AlterMateriaTableLlaveForaniaPrerequisito extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateMovimientoAlumnoTable extends Migration
      */
     public function up()
     {
-        Schema::create('movimiento_alumno', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('nombre');
+        Schema::table('materia', function (Blueprint $table) {
+            $table->foreign('id_prerequisito')->references('id')->on('materia');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateMovimientoAlumnoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movimiento_alumno');
+        Schema::table('materia', function (Blueprint $table) {
+            //
+        });
     }
 }
