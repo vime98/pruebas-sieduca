@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoPagoTable extends Migration
+class CreateAlumnoInstitutoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTipoPagoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_pago', function (Blueprint $table) {
+        Schema::create('alumno_instituto', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('nombre');
-            $table->float('monto', 8, 2);
-            $table->date('fecha_limite');
-            $table->uuid('id_reticula');
-            $table->foreign('id_reticula')->references('id')->on('reticula');
+            $table->uuid('id_alumno');
+            $table->foreign('id_alumno')->references('id')->on('alumno');
+            $table->uuid('id_instituto');
+            $table->foreign('id_instituto')->references('id')->on('instituto');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTipoPagoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_pago');
+        Schema::dropIfExists('alumno_instituto');
     }
 }

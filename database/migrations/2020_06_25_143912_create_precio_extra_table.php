@@ -14,7 +14,11 @@ class CreatePrecioExtraTable extends Migration
     public function up()
     {
         Schema::create('precio_extra', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->string('nombre');
+            $table->float('costo', 8, 2);
+            $table->uuid('id_instituto');
+            $table->foreign('id_instituto')->references('id')->on('instituto');
             $table->timestamps();
         });
     }
